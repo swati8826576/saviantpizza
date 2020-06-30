@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using SaviantPizza.Repository.Entity;
 using SaviantPizza.Repository.IRepository;
+using System.Linq;
 
 namespace SaviantPizza.Business.Service
 {
@@ -18,7 +19,7 @@ namespace SaviantPizza.Business.Service
 
         public  void GetPizzaList()
         {
-            _pizzaRepository.GetAll();
+            _pizzaRepository.GetAll().ToList().Where(e => e.IsActive == true);
         }
 
        

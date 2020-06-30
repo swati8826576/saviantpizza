@@ -3,9 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SaviantPizza.Repository.IRepository
+namespace SaviantPizza.Business.IService
 {
-   public interface IPizzaRepository : IGenericRepository<PizzaType>
+   public interface IVendorService 
     {
+        List<VendorType> GetAllVendors();
     }
 }

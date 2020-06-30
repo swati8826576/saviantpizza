@@ -5,7 +5,8 @@ using System.Text;
 
 namespace SaviantPizza.Repository.IRepository
 {
-   public interface IPizzaRepository : IGenericRepository<PizzaType>
+   
+    public interface IVendorRepository : IGenericRepository<VendorType>
     {
     }
 }
