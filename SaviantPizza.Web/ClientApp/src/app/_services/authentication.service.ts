@@ -21,18 +21,15 @@ export class AuthenticationService {
   //  return this.currentUserSubject.value;
   //}
 
-  login(username, password  ) {
-    alert("in service")
+  login(EmailId, password  ) {
     this.myAppUrl = environment.appUrl;
     this.myApiUrl = 'Login/';
     //return this.http.get<string[]>(this.myAppUrl + this.myApiUrl)
      
 
-
     //return this.http.get<string[]>(this.myAppUrl + this.myApiUrl)
-    alert(this.myAppUrl + this.myApiUrl);
 
-    return this.http.post<any>(this.myAppUrl + this.myApiUrl, { username, password })
+    return this.http.post<any>(this.myAppUrl + this.myApiUrl, { EmailId, password })
     //  .pipe(map(user => {
     //    // store user details and jwt token in local storage to keep user logged in between page refreshes
     //    localStorage.setItem('currentUser', JSON.stringify(user));

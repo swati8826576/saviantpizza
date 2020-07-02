@@ -1,10 +1,12 @@
-﻿using System;
+﻿using SaviantPizza.Repository.Entity;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace SaviantPizza.Repository.IRepository
 {
-    public interface IOrderRepository
+    public interface IOrderRepository : IGenericRepository<Order>
     {
+
     }
 }

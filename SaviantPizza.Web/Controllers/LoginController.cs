@@ -10,7 +10,6 @@ using SaviantPizza.Web.Extension;
 using SaviantPizza.Web.Models;
 using Microsoft.AspNetCore.Http;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace SaviantPizza.Web.Controllers
 {
@@ -21,14 +20,12 @@ namespace SaviantPizza.Web.Controllers
     public class LoginController : ControllerBase
     {
 
-        //private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly ILoginService _loginService;
 
 
-        public LoginController(ILoginService loginService)//, IHttpContextAccessor httpContextAccesso)
+        public LoginController(ILoginService loginService)//, )
         {
             _loginService = loginService;
-           // _httpContextAccessor = httpContextAccesso;
         }
 
             [HttpGet]
@@ -46,10 +43,9 @@ namespace SaviantPizza.Web.Controllers
 
         // POST api/<LoginController>
         [HttpPost]
-        public void Login([FromBody] UserViewModel user)
+        public bool Login([FromBody] UserViewModel user)
         {
-           // var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-            _loginService.Login(user.UserViewModelToUserEntity());
+           return  _loginService.Login(user.UserViewModelToUserEntity());
         }
 
         // PUT api/<LoginController>/5

@@ -19,8 +19,8 @@ namespace SaviantPizza.Repository.Repository
 
         public bool Login(User user)
         {
-            GetAll().Where(e => e.EmailId == user.EmailId && e.Password == user.Password && e.IsActive == true);
-            return true;
+            var UserDetails = GetAll().Where(e => e.EmailId == user.EmailId && e.Password == user.Password && e.IsActive == true).FirstOrDefault();
+             return UserDetails != null ? true : false;
         }
     }
 }

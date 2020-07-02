@@ -7,6 +7,7 @@ namespace SaviantPizza.Repository.Entity
     {
         public PizzaType()
         {
+            OrderDetails = new HashSet<OrderDetails>();
             Pricing = new HashSet<Pricing>();
         }
 
@@ -16,6 +17,7 @@ namespace SaviantPizza.Repository.Entity
         public int CategoryId { get; set; }
 
         public virtual PizzaCategory Category { get; set; }
+        public virtual ICollection<OrderDetails> OrderDetails { get; set; }
         public virtual ICollection<Pricing> Pricing { get; set; }
     }
 }

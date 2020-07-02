@@ -1,25 +1,24 @@
 <div style="text-align:center">
-  
+
 </div>
 <div class="container">
   <div class="text-right mt-5">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6">
 
         <!-- Master Checkbox -->
         <ul class="list-group">
           <li class="list-group-item">
 
-            <span (click)="selectUnselectAll(data)">
+            <!--<span (click)="selectUnselectAll(data)">
               <span *ngIf="data.isAllSelected;else noneSelected">Unselect All </span>
               <ng-template #noneSelected>Select All </ng-template>
-            </span>
-
+            </span>-->
             <!--Master Expand/ Collapse Arrow  -->
-            <span (click)="expandCollapseAll(data)">
+            <!--<span (click)="expandCollapseAll(data)">
               <i class="fas fa-angle-up" *ngIf="data.isAllCollapsed;else isCollapsed"></i>
               <ng-template #isCollapsed><i class="fas fa-angle-down"></i></ng-template>
-            </span>
+            </span>-->
 
           </li>
         </ul>
@@ -27,12 +26,12 @@
         <ul class="list-group">
 
           <!-- Parent Item -->
-          <li class="list-group-item" *ngFor="let item of data.ParentChildchecklist">
+          <li class="list-group-item" *ngFor="let item of data">
 
             <!-- Parent Checkbox -->
-            <input type="checkbox" [(ngModel)]="item.isSelected" name="list_name" value="{{item.id}}"
+            <input type="checkbox" [(ngModel)]="isSelected" name="list_name" value="{{item.vendorId}}"
                    (ngModelChange)="parentCheck(item)" />
-            {{item.value}}
+            {{item.vendorName}}
             <!-- Parent Arrow -->
             <span (click)="expandCollapse(item)">
               <i class="fas fa-angle-up" *ngIf="item.isClosed;else isCollapsed"></i>
@@ -45,18 +44,18 @@
               <ul class="list-group level-two">
                 <!-- Child Item -->
                 <li class="list-group-item level-two" *ngFor="let itemChild of
-                item.childList">
+                item.pizzaDetails">
                   <!-- Child Checkbox -->
                   <input type="checkbox" [(ngModel)]="itemChild.isSelected" name="list_name_child"
-                         value="{{itemChild.id}}" (ngModelChange)="childCheck(item,item.childList)" />
-                  {{itemChild.value}}
+                         value="{{itemChild.pizzaId}}" (ngModelChange)="childCheck(item,item.pizzaDetails)" />
+                  {{itemChild.pizzaName}}
 
-                <span style="white-space: pre; display: inline-block">
-                  Price:{{itemChild.Price}}/-
+                  <span style="white-space: pre; display: inline-block">
+                    Price:{{itemChild.price}}/-
 
-                  after discount:{{itemChild.DiscountedPrice}}/-
+                    after discount:{{itemChild.discountedPrice}}/-
 
-                </span>
+                  </span>
 
                 </li>
 
@@ -67,9 +66,20 @@
         </ul>
 
       </div>
-      <!--<div class="col-md-8">
-        {{stringify(data)}}
-      </div>-->
+
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-3 ">
+  </div>
+  <div class="col-md-3 p-3">
+    <button class="btn btn-block btn-primary active" (click)="PlaceOrder()"> Order </button>
+
+  </div>
+  <div class="col-md-3 ">
+  </div>
+
+</div>
+

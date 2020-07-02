@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using SaviantPizza.Repository.Entity;
 
 namespace SaviantPizza.Repository.Entity
 {
@@ -17,7 +18,9 @@ namespace SaviantPizza.Repository.Entity
 
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<OrderDetails> OrderDetails { get; set; }
+        public virtual DbSet<OtherDiscounts> OtherDiscounts { get; set; }
         public virtual DbSet<PizzaCategory> PizzaCategory { get; set; }
+        public virtual DbSet<PizzaDetailsView> PizzaDetailsView { get; set; }
         public virtual DbSet<PizzaType> PizzaType { get; set; }
         public virtual DbSet<Pricing> Pricing { get; set; }
         public virtual DbSet<User> User { get; set; }
@@ -28,7 +31,7 @@ namespace SaviantPizza.Repository.Entity
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=localhost;Database=SaviantPizza;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Server=localhost;Database=SaviantPizza;Trusted_Connection=True;");
             }
         }
 
@@ -49,7 +52,7 @@ namespace SaviantPizza.Repository.Entity
 
             modelBuilder.Entity<OrderDetails>(entity =>
             {
-                entity.HasNoKey();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Discount).HasColumnType("numeric(18, 2)");
 
@@ -59,17 +62,32 @@ namespace SaviantPizza.Repository.Entity
 
                 entity.Property(e => e.TotalAfterDiscount).HasColumnType("numeric(18, 2)");
 
+                entity.HasOne(d => d.Order)
+                    .WithMany(p => p.OrderDetails)
+                    .HasForeignKey(d => d.OrderId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__OrderDeta__Order__5FB337D6");
+
                 entity.HasOne(d => d.PizzaType)
-                    .WithMany()
+                    .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.PizzaTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__OrderDeta__Pizza__49C3F6B7");
 
                 entity.HasOne(d => d.Vendor)
-                    .WithMany()
+                    .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.VendorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__OrderDeta__Vendo__4AB81AF0");
+            });
+
+            modelBuilder.Entity<OtherDiscounts>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.Property(e => e.Discount).HasColumnType("numeric(18, 2)");
+
+                entity.Property(e => e.Id).HasColumnName("id");
             });
 
             modelBuilder.Entity<PizzaCategory>(entity =>
@@ -77,6 +95,21 @@ namespace SaviantPizza.Repository.Entity
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Name).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<PizzaDetailsView>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("PizzaDetailsView");
+
+                entity.Property(e => e.Discount).HasColumnType("decimal(3, 1)");
+
+                entity.Property(e => e.PizzaCategoryName).HasMaxLength(50);
+
+                entity.Property(e => e.PizzaName).HasMaxLength(50);
+
+                entity.Property(e => e.VendorName).HasMaxLength(50);
             });
 
             modelBuilder.Entity<PizzaType>(entity =>

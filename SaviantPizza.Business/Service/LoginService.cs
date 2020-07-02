@@ -17,8 +17,7 @@ namespace SaviantPizza.Business.Service
                 }
         public bool Login(User user)
         {
-            _loginRepository.Login(user);
-            return true; 
+          return  _loginRepository.Login(user);
         }
     }
 }

@@ -10,8 +10,10 @@ using SaviantPizza.Business.Service;
 using SaviantPizza.Repository.IRepository;
 using SaviantPizza.Repository.Repository;
 using SaviantPizza.Repository.Entity;
+using Microsoft.Extensions.Logging;
+using SaviantPizza.Web.Controllers;
 
-namespace WebApplication1
+namespace SaviantPizza.Web
 {
     public class Startup
     {
@@ -31,7 +33,11 @@ namespace WebApplication1
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+           
+
             services.AddMvc();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddDbContext<SaviantPizzaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SaviantPizzaDBConnection")));
             services.AddScoped<IPizzaService, PizzaService>();
 
@@ -39,12 +45,19 @@ namespace WebApplication1
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<ILoginRepository, LoginRepository>();
 
-            //services.AddHttpContextAccessor();
+            services.AddScoped<ILoginRepository, LoginRepository>();
+            services.AddScoped<IPizzaDetailViewRepository, PizzaDetailsViewRepository>();
+
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IOrderRepository,OrderRepository>();
+
+
+            services.AddHttpContextAccessor();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -85,6 +98,8 @@ namespace WebApplication1
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
+           // loggerFactory.AddFile("Logs/myapp-{Date}.txt");
         }
     }
 }

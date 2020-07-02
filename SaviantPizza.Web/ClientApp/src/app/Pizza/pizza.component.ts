@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { PizzaDetailsViewModel } from '../_models/PizzaDetailsViewModel';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'pizza',
@@ -7,76 +11,95 @@ import { Component } from '@angular/core';
 })
 export class PizzaComponent {
   title = 'CheckList for Parents and Child Structure with Expand/ Collapse';
-  data: any;
+  data: PizzaDetailsViewModel[]; 
+  list: number[]
+  myAppUrl: string;
+  myApiUrl: string;
+  constructor(private http: HttpClient,private toastr: ToastrService) {
+   
+  }
 
-  constructor() {
-    this.data = {};
-    this.data.isAllSelected = false;
-    this.data.isAllCollapsed = false;
+  ngOnInit() {
+    this.myAppUrl = environment.appUrl;
+      this.myApiUrl = 'Pizza';
 
-    //List object having hierarchy of parents and its children
-    this.data.ParentChildchecklist = [
-      {
-        id: 1, value: 'Dominos', isSelected: false, isClosed: true,
-        childList: [
-          {
-            pizzaId: 1, vendorId: 1, value: 'Margherita ', isSelected: false ,Price : 250 , DiscountedPrice : 150
-          },
-          {
-            id: 2, parent_id: 1, value: 'Farm House', isSelected: false,
-          }
-        ]
-      },
-      {
-        id: 2, value: 'Pizza Hut', isSelected: false, isClosed: true, childList: [
-          {
-            id: 1, parent_id: 1, value: 'Cheese n corn', isSelected: false
-          },
-          {
-            id: 2, parent_id: 1, value: 'Chicken sausage', isSelected: false
-          }
-        ]
-      },
-      {
-        id: 3, value: 'Papa Johns', isSelected: false, isClosed: true,
-        childList: [
-          {
-            id: 1, parent_id: 1, value: 'Farm House', isSelected: false
-          },
-          {
-            id: 2, parent_id: 1, value: 'Margherita', isSelected: false
-          }
-        ]
-      }
-    ];
+    return this.http.get<any>(this.myAppUrl + this.myApiUrl)
+      .subscribe(
+        data => {
+          this.data = data;
+          
+        }
+      );
+   
   }
 
   //Click event on parent checkbox  
   parentCheck(parentObj) {
-    for (var i = 0; i < parentObj.childList.length; i++) {
-      parentObj.childList[i].isSelected = parentObj.isSelected;
+    for (var i = 0; i < parentObj.PizzaDetails.length; i++) {
+      parentObj.PizzaDetails[i].isSelected = parentObj.isSelected;
+      alert("parentCheck");
     }
   }
 
   //Click event on child checkbox  
   childCheck(parentObj, childObj) {
-    parentObj.isSelected = childObj.every(function (itemChild: any) {
-      return itemChild.isSelected == true;
 
 
-    })
-  }
-
-  //Click event on master select
-  selectUnselectAll(obj) {
-    obj.isAllSelected = !obj.isAllSelected;
-    for (var i = 0; i < obj.ParentChildchecklist.length; i++) {
-      obj.ParentChildchecklist[i].isSelected = obj.isAllSelected;
-      for (var j = 0; j < obj.ParentChildchecklist[i].childList.length; j++) {
-        obj.ParentChildchecklist[i].childList[j].isSelected = obj.isAllSelected;
-      }
+   var headers = {
+      headers: new HttpHeaders({
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json'
+      })
     }
+    // this.http.post<any>(this.myAppUrl + this.myApiUrl, { childObj: childObj})
+     
+      this.myAppUrl = environment.appUrl;
+      this.myApiUrl = 'Pizza';
+
+    
+    //var viewModel = [];
+
+    //parentObj.isSelected = childObj.every(function (itemChild: any) {
+   // childObj.every(function (itemChild: any) {
+
+        
+
+       //return itemChild.isSelected == true;
+
+   // })
+
+
+   
   }
+  PlaceOrder() {
+    this.myApiUrl = 'Order';
+
+    var viewModel = this.data;
+    this.http.post<boolean>(this.myAppUrl + this.myApiUrl, viewModel)
+      .subscribe(data => {
+
+        if (data == true)
+        {
+          this.toastr.success("Order Placed Successfully !!")
+        }
+
+        else {
+          this.toastr.error("Something went wrong !!")
+
+        }
+      });
+
+  }
+  //Click event on master select
+  //selectUnselectAll(obj) {
+  //  obj.isAllSelected = !obj.isAllSelected;
+  //  for (var i = 0; i < obj.ParentChildchecklist.length; i++) {
+  //    obj.ParentChildchecklist[i].isSelected = obj.isAllSelected;
+  //    for (var j = 0; j < obj.ParentChildchecklist[i].PizzaDetails.length; j++) {
+  //      obj.ParentChildchecklist[i].PizzaDetails[j].isSelected = obj.isAllSelected;
+  //    }
+  //  }
+  //}
 
   //Expand/Collapse event on each parent
   expandCollapse(obj) {
@@ -85,7 +108,6 @@ export class PizzaComponent {
 
   //Master expand/ collapse event
   expandCollapseAll(obj) {
-    alert("hii")
     for (var i = 0; i < obj.ParentChildchecklist.length; i++) {
       obj.ParentChildchecklist[i].isClosed = !obj.isAllCollapsed;
     }

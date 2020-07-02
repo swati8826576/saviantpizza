@@ -12,7 +12,9 @@ namespace SaviantPizza.Repository.Entity
         public decimal? Discount { get; set; }
         public decimal? OtherDiscount { get; set; }
         public decimal? TotalAfterDiscount { get; set; }
+        public Guid OrderId { get; set; }
 
+        public virtual Order Order { get; set; }
         public virtual PizzaType PizzaType { get; set; }
         public virtual VendorType Vendor { get; set; }
     }

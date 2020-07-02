@@ -7,6 +7,7 @@ namespace SaviantPizza.Repository.Entity
     {
         public VendorType()
         {
+            OrderDetails = new HashSet<OrderDetails>();
             Pricing = new HashSet<Pricing>();
         }
 
@@ -14,6 +15,7 @@ namespace SaviantPizza.Repository.Entity
         public string VendorName { get; set; }
         public bool? IsActive { get; set; }
 
+        public virtual ICollection<OrderDetails> OrderDetails { get; set; }
         public virtual ICollection<Pricing> Pricing { get; set; }
     }
 }
