@@ -21,7 +21,7 @@ namespace SaviantPizza.Business.Service
 
         public  List<PizzaDetailsView> GetPizzaList()
         {
-            _disountRepository.GetAll().FirstOrDefault();
+          //  _disountRepository.GetAll().FirstOrDefault();
          return  _pizzaDetailViewRepository.GetAll().ToList();
         }
 

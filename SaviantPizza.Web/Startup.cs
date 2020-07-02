@@ -51,6 +51,8 @@ namespace SaviantPizza.Web
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IOrderRepository,OrderRepository>();
 
+            services.AddScoped<IDisountRepository, DiscountRepository>();
+
 
             services.AddHttpContextAccessor();
 

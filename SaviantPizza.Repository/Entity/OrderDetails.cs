@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SaviantPizza.Repository.Entity
 {
     public partial class OrderDetails
     {
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public Guid Id { get; set; }
         public int PizzaTypeId { get; set; }
         public int VendorId { get; set; }

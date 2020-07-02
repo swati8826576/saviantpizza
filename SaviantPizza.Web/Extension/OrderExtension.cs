@@ -32,7 +32,7 @@ namespace SaviantPizza.Web.Extension
                     orderDetail.OtherDiscount = 0;
                     orderDetail.PizzaTypeId = pizzaDetail.PizzaId;
                     orderDetail.Price = pizzaDetail.Price;
-                    orderDetail.TotalAfterDiscount = CalculateDiscountedPrice(orderDetail.Discount , orderDetail.Price);
+                    orderDetail.TotalAfterDiscount = pizzaDetail.DiscountedPrice;
                     orderDetail.VendorId = item.VendorId;
                     order.OrdeTotal = order.OrdeTotal + orderDetail.TotalAfterDiscount;
                     order.OrderDetails.Add(orderDetail);

@@ -7,7 +7,7 @@ namespace SaviantPizza.Business.Enums
     enum Vendor
     {
         Dominos = 1,
-        PapaJohn  = 2
+        PizzaHut = 2
 
     }
 }

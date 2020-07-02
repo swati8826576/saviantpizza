@@ -6,7 +6,7 @@ using System.Text;
 
 namespace VendorAPIs.Service
 {
-    public class PapaJohns : IVendor
+    public class PizzaHut : IVendor
     {
         public bool placeOrder()
         {

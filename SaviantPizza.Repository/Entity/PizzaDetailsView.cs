@@ -21,7 +21,6 @@ namespace SaviantPizza.Repository.Entity
         public string VendorName { get; set; }
 
         public bool? VendorTypeIsActive { get; set; }
-        public decimal? OtherDiscounts { get; set; }
 
     }
 }

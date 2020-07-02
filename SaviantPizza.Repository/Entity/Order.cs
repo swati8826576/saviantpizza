@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SaviantPizza.Repository.Entity
 {
@@ -9,7 +11,8 @@ namespace SaviantPizza.Repository.Entity
         {
             OrderDetails = new HashSet<OrderDetails>();
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
         public decimal? OrdeTotal { get; set; }

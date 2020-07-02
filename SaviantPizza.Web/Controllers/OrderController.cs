@@ -44,11 +44,11 @@ namespace SaviantPizza.Web.Controllers
 
         // POST api/<PizzaController>
         [HttpPost]
-        public void Post([FromBody] PizzaDetailsViewModel[] viewModel)
+        public bool Post([FromBody] PizzaDetailsViewModel[] viewModel)
         {
             // var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var result =   OrderExtension.ViewModelToEntity(viewModel.ToList(), "85B7E18F-4DE9-449C-A582-EA85AE77ACC3");
-            _orderService.SaveOrder(result);
+           return _orderService.SaveOrder(result);
 
            // _logger.LogInformation("Order made by customer");
 

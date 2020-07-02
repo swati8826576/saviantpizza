@@ -18,8 +18,8 @@ namespace SaviantPizza.Business.Factory
                 case (int)Vendor.Dominos:
                     return new Dominos();
 
-                case (int)Vendor.PapaJohn:
-                    return new PapaJohns();
+                case (int)Vendor.PizzaHut:
+                    return new PizzaHut();
                 default:
                     throw new ApplicationException(string.Format("This type of vendor can not be created"));
             }

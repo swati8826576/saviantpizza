@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PizzaDetailsViewModel } from '../_models/PizzaDetailsViewModel';
-import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'pizza',
@@ -15,7 +15,7 @@ export class PizzaComponent {
   list: number[]
   myAppUrl: string;
   myApiUrl: string;
-  constructor(private http: HttpClient,private toastr: ToastrService) {
+  constructor(private http: HttpClient ) {
    
   }
 
@@ -23,7 +23,7 @@ export class PizzaComponent {
     this.myAppUrl = environment.appUrl;
       this.myApiUrl = 'Pizza';
 
-    return this.http.get<any>(this.myAppUrl + this.myApiUrl)
+     this.http.get<any>(this.myAppUrl + this.myApiUrl)
       .subscribe(
         data => {
           this.data = data;
@@ -37,7 +37,6 @@ export class PizzaComponent {
   parentCheck(parentObj) {
     for (var i = 0; i < parentObj.PizzaDetails.length; i++) {
       parentObj.PizzaDetails[i].isSelected = parentObj.isSelected;
-      alert("parentCheck");
     }
   }
 
@@ -80,11 +79,11 @@ export class PizzaComponent {
 
         if (data == true)
         {
-          this.toastr.success("Order Placed Successfully !!")
+          alert("Order Placed Successfully !!")
         }
 
         else {
-          this.toastr.error("Something went wrong !!")
+          alert("Something went wrong !!")
 
         }
       });

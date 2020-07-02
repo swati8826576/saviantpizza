@@ -39,7 +39,7 @@ namespace SaviantPizza.Repository.Entity
         {
             modelBuilder.Entity<Order>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id);
 
                 entity.Property(e => e.OrdeTotal).HasColumnType("numeric(10, 2)");
 
@@ -52,7 +52,7 @@ namespace SaviantPizza.Repository.Entity
 
             modelBuilder.Entity<OrderDetails>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id);
 
                 entity.Property(e => e.Discount).HasColumnType("numeric(18, 2)");
 

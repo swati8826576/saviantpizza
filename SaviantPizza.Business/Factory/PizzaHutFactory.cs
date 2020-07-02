@@ -6,7 +6,7 @@ using VendorAPIs.Service;
 
 namespace SaviantPizza.Business.Factory
 {
-    public class PapaJohnsFactory// : VendorFactoryBase
+    public class PizzaHutFactory// : VendorFactoryBase
     {
 
         //protected override IVendor MakeVendor()
