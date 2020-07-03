@@ -12,6 +12,7 @@ using SaviantPizza.Repository.Repository;
 using SaviantPizza.Repository.Entity;
 using Microsoft.Extensions.Logging;
 using SaviantPizza.Web.Controllers;
+using SaviantPizza.Business.Helper;
 
 namespace SaviantPizza.Web
 {
@@ -34,24 +35,13 @@ namespace SaviantPizza.Web
                 configuration.RootPath = "ClientApp/dist";
             });
 
-           
+
+            services.addServices();
 
             services.AddMvc();
             services.AddControllers().AddNewtonsoftJson();
-            services.AddDbContext<SaviantPizzaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SaviantPizzaDBConnection")));
-            services.AddScoped<IPizzaService, PizzaService>();
-
-            services.AddScoped<IPizzaRepository, PizzaRepository>();
-            services.AddScoped<ILoginService, LoginService>();
-            services.AddScoped<ILoginRepository, LoginRepository>();
-
-            services.AddScoped<ILoginRepository, LoginRepository>();
-            services.AddScoped<IPizzaDetailViewRepository, PizzaDetailsViewRepository>();
-
-            services.AddScoped<IOrderService, OrderService>();
-            services.AddScoped<IOrderRepository,OrderRepository>();
-
-            services.AddScoped<IDisountRepository, DiscountRepository>();
+           
+            
 
 
             services.AddHttpContextAccessor();

@@ -27,8 +27,9 @@ import { LoginComponent } from './Login/Login.component';
    // ToastrModule,//.forRoot(),
     RouterModule.forRoot([
 
+     { path: '', component: LoginComponent, pathMatch: 'full' },
+
      // { path: '', component: PizzaComponent, pathMatch: 'full' },
-      { path: '', component: LoginComponent, pathMatch: 'full' },
       { path: 'Pizza', component: PizzaComponent },
 
     ])

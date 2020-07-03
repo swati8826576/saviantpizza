@@ -59,7 +59,7 @@ namespace SaviantPizza.Web.Extension
         /// <returns>final price</returns>
         private static decimal CalculateDiscountedPrice(decimal? discount, int? price)
         {
-            var percentage =( discount * 100) / price ;
+            var percentage =( discount * price) / 100 ;
             var total =price - percentage;
             return total.HasValue? Math.Floor(total.Value) : 0;
         }

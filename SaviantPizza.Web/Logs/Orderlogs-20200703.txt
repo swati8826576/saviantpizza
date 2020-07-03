@@ -10,3 +10,110 @@
 2020-07-03T11:32:57.8133497+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
  (0ebafb57)
 2020-07-03T11:35:19.3085317+05:30 80000094-0002-f500-b63f-84710c7967bb [INF] Order made by customerd22d250d-dd77-416c-6fec-08d81f170a9685b7e18f-4de9-449c-a582-ea85ae77acc3 (8bfa2aed)
+2020-07-03T15:46:36.9151073+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T15:46:36.9290110+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T15:46:36.9292057+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T15:46:46.4851573+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T15:46:58.4487335+05:30  [ERR] ERROR in app/_services/authentication.service.ts:6:22 - error TS2307: Cannot find module '../_models/User'.
+
+6 import { User } from '../_models/User';
+                       ~~~~~~~~~~~~~~~~~
+
+ (f2173ff7)
+2020-07-03T16:03:39.2261354+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T16:03:39.2415020+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T16:03:39.2417343+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T16:03:46.6850220+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T16:03:56.3624222+05:30  [ERR] ERROR in app/_services/authentication.service.ts:6:22 - error TS2307: Cannot find module '../_models/User'.
+
+6 import { User } from '../_models/User';
+                       ~~~~~~~~~~~~~~~~~
+
+ (f2173ff7)
+2020-07-03T16:06:09.5615157+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T16:06:09.5752308+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T16:06:09.5753850+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T16:06:18.5570415+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T16:06:28.2673970+05:30  [ERR] ERROR in app/_services/authentication.service.ts:6:22 - error TS2307: Cannot find module '../_models/User'.
+
+6 import { User } from '../_models/User';
+                       ~~~~~~~~~~~~~~~~~
+
+ (f2173ff7)
+2020-07-03T16:07:14.9665872+05:30  [ERR]     ERROR in src/app/_services/authentication.service.ts(6,22): error TS2307: Cannot find module '../_models/User'.
+    
+ (5cd7b048)
+2020-07-03T16:07:59.5272493+05:30  [ERR]     ERROR in src/app/_services/authentication.service.ts(6,22): error TS2307: Cannot find module '../_models/User'.
+    
+ (5cd7b048)
+2020-07-03T16:08:18.2982749+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T16:08:18.3140970+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T16:08:18.3142779+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T16:08:25.7966449+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T16:08:35.4580147+05:30  [ERR] ERROR in app/_services/authentication.service.ts:6:22 - error TS2307: Cannot find module '../_models/User'.
+
+6 import { User } from '../_models/User';
+                       ~~~~~~~~~~~~~~~~~
+
+ (f2173ff7)
+2020-07-03T16:11:04.2621854+05:30  [ERR]     ERROR in src/app/_services/authentication.service.ts(6,22): error TS2307: Cannot find module '../_models/User'.
+    
+ (5cd7b048)
+2020-07-03T16:11:24.9715165+05:30  [ERR]     ERROR in src/app/_services/authentication.service.ts(6,22): error TS2307: Cannot find module '../_models/User'.
+    
+ (5cd7b048)
+2020-07-03T16:12:05.8169132+05:30  [ERR]     ERROR in src/app/_services/authentication.service.ts(6,22): error TS2307: Cannot find module '../_models/User'.
+    
+ (5cd7b048)
+2020-07-03T16:12:18.6382413+05:30  [ERR]     ERROR in src/app/_services/authentication.service.ts(6,22): error TS2307: Cannot find module '../_models/User'.
+    
+ (5cd7b048)
+2020-07-03T16:14:22.3011762+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T16:14:22.3148388+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T16:14:22.3150489+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T16:14:30.7063243+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T16:14:42.3125542+05:30  [ERR] ERROR in app/_services/authentication.service.ts:6:22 - error TS2307: Cannot find module '../_models/User'.
+
+6 import { User } from '../_models/User';
+                       ~~~~~~~~~~~~~~~~~
+
+ (f2173ff7)
+2020-07-03T16:18:34.6148588+05:30  [ERR]     ERROR in src/app/_services/authentication.service.ts(10,47): error TS2304: Cannot find name 'User'.
+    src/app/_services/authentication.service.ts(11,34): error TS2304: Cannot find name 'User'.
+    src/app/_services/authentication.service.ts(15,51): error TS2304: Cannot find name 'User'.
+    
+ (a7ec5d69)
+2020-07-03T16:18:52.5419264+05:30  [ERR]     ERROR in src/app/_services/authentication.service.ts(6,22): error TS2307: Cannot find module '../_models/User'.
+    
+ (5cd7b048)
+2020-07-03T16:25:17.5327110+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T16:25:17.5474112+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T16:25:17.5476061+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T16:25:25.9810408+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T16:26:49.0420757+05:30 80000109-0002-fa00-b63f-84710c7967bb [INF] Order made by customer
+Order Id:da48a970-2874-4928-c1e8-08d81f3fc8ed
+UserId:85b7e18f-4de9-449c-a582-ea85ae77acc3 (3be73e76)
+2020-07-03T16:32:57.6862310+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T16:32:57.7027721+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T16:32:57.7029697+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T16:33:07.1587656+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T16:36:18.4126056+05:30 80000150-0001-fd00-b63f-84710c7967bb [INF] Order made by customer :  Order Id: 097f2157-73dd-469e-4ecb-08d81f411c4dUserId: 85b7e18f-4de9-449c-a582-ea85ae77acc3 (79c72ca3)
+2020-07-03T16:40:57.0168457+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T16:40:57.0315196+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T16:40:57.0317154+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T16:41:04.7173509+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T16:42:48.6079358+05:30 8000004c-0002-f400-b63f-84710c7967bb [INF] Order made by customer :  Order Id: 140434a2-2766-4f66-d566-08d81f4204e3UserId: 85b7e18f-4de9-449c-a582-ea85ae77acc3 (1c89d200)
+2020-07-03T17:17:27.7995184+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T17:17:27.8157772+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T17:17:27.8159608+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T17:17:35.8138543+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T17:18:20.7689152+05:30 8000017a-0000-fe00-b63f-84710c7967bb [INF] Order made by customer :  Order Id: b7f66fb9-c15f-4aa7-9f4a-08d81f46fbbeUserId: 85b7e18f-4de9-449c-a582-ea85ae77acc3 (5e513932)
