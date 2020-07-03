@@ -9,19 +9,19 @@ namespace SaviantPizza.Business.Service
     public class PizzaService : IPizzaService
     {
         private readonly IPizzaDetailViewRepository _pizzaDetailViewRepository;
-        private readonly IDisountRepository  _disountRepository;
 
 
-
-        public PizzaService( IPizzaDetailViewRepository pizzaDetailViewRepository, IDisountRepository disountRepository)
+        public PizzaService( IPizzaDetailViewRepository pizzaDetailViewRepository)
         {
             _pizzaDetailViewRepository = pizzaDetailViewRepository;
-            _disountRepository = disountRepository;
         }
 
+        /// <summary>
+        /// get list of available pizza with other details like vendor , price and discount
+        /// </summary>
+        /// <returns>Pizza details</returns>
         public  List<PizzaDetailsView> GetPizzaList()
         {
-          //  _disountRepository.GetAll().FirstOrDefault();
          return  _pizzaDetailViewRepository.GetAll().ToList();
         }
 

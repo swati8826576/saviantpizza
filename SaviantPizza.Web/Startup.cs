@@ -101,7 +101,7 @@ namespace SaviantPizza.Web
                 }
             });
 
-           // loggerFactory.AddFile("Logs/myapp-{Date}.txt");
+             loggerFactory.AddFile("Logs/Orderlogs-{Date}.txt");
         }
     }
 }

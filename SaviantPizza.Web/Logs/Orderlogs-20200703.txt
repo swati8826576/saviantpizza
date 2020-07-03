@@ -1,0 +1,12 @@
+2020-07-03T11:15:30.5377071+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T11:15:30.5536546+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T11:15:30.5538303+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T11:15:38.7553787+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T11:18:11.1032012+05:30 800000bf-0000-f800-b63f-84710c7967bb [INF] Order made by customerSaviantPizza.Web.Models.PizzaDetailsViewModel[] (cf393854)
+2020-07-03T11:32:50.5682320+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T11:32:50.5836258+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T11:32:50.5838125+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T11:32:57.8133497+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T11:35:19.3085317+05:30 80000094-0002-f500-b63f-84710c7967bb [INF] Order made by customerd22d250d-dd77-416c-6fec-08d81f170a9685b7e18f-4de9-449c-a582-ea85ae77acc3 (8bfa2aed)

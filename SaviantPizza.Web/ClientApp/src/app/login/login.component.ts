@@ -69,9 +69,8 @@ export class LoginComponent implements OnInit {
             this.loading = false;
             this.isLoginSuccessfull = false;
             this.submitted = true;
-            alert("submitted" + this.submitted);
 
-            alert("isLoginSuccessfull" + !this.isLoginSuccessfull);
+            alert("Please enter correct details");
           }
 
 

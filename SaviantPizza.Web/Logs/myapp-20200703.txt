@@ -1,0 +1,6 @@
+2020-07-03T11:11:52.4180614+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T11:11:52.4320149+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T11:11:52.4322404+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T11:12:04.7055813+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T11:12:49.7008819+05:30 800000e2-0003-fc00-b63f-84710c7967bb [INF] Order made by customer (a71e9f0a)

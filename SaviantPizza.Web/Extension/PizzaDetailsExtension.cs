@@ -3,13 +3,20 @@ using SaviantPizza.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace SaviantPizza.Web.Extension
 {
+    /// <summary>
+    /// this class is an extension to PizzaDetailView Type
+    /// </summary>
     public static class PizzaDetailsExtension
     {
 
+        /// <summary>
+        /// Converts entity to viewmodel
+        /// </summary>
+        /// <param name="pizzaDetailsViewList"></param>
+        /// <returns>list of view model</returns>
         public static List<PizzaDetailsViewModel> EntityToViewModel( this List<PizzaDetailsView> pizzaDetailsViewList)
         {
             List<PizzaDetailsViewModel> viewModelList = new List<PizzaDetailsViewModel>();
@@ -44,7 +51,12 @@ namespace SaviantPizza.Web.Extension
             return viewModelList;
         }
 
-
+        /// <summary>
+        /// calculates discounted price using actual price and given discount
+        /// </summary>
+        /// <param name="discount"></param>
+        /// <param name="price"></param>
+        /// <returns>final price</returns>
         private static decimal CalculateDiscountedPrice(decimal? discount, int? price)
         {
             var percentage =( discount * 100) / price ;

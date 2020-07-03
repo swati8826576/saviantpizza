@@ -7,7 +7,6 @@ namespace SaviantPizza.Business.IService
 {
    public interface IPizzaService
     {
-        // void GetPizzaList();
         List<PizzaDetailsView> GetPizzaList();
     }
 }

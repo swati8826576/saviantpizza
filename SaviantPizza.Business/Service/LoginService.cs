@@ -1,9 +1,6 @@
 ﻿using SaviantPizza.Business.IService;
 using SaviantPizza.Repository.Entity;
 using SaviantPizza.Repository.IRepository;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SaviantPizza.Business.Service
 {
@@ -13,11 +10,17 @@ namespace SaviantPizza.Business.Service
         private readonly ILoginRepository _loginRepository;
         public LoginService(ILoginRepository loginRepository)
         {
-            _loginRepository = loginRepository; 
-                }
+            _loginRepository = loginRepository;
+        }
+
+        /// <summary>
+        /// Allow user to log in to system if provided details match 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>returns true if user is valid</returns>
         public bool Login(User user)
         {
-          return  _loginRepository.Login(user);
+            return _loginRepository.Login(user);
         }
     }
 }

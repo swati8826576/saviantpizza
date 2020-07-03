@@ -1,17 +1,22 @@
 ﻿using SaviantPizza.Repository.Entity;
-using SaviantPizza.Repository.Repository;
 using SaviantPizza.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 
 namespace SaviantPizza.Web.Extension
 {
+    /// <summary>
+    /// This class is an extension to order type 
+    /// </summary>
     public static  class OrderExtension
     {
+        /// <summary>
+        /// Converts viewmodel to entity
+        /// </summary>
+        /// <param name="viewModelList"></param>
+        /// <param name="userId"></param>
+        /// <returns>list of order entity</returns>
         public static List<Order> ViewModelToEntity( List<PizzaDetailsViewModel> viewModelList ,string userId )
         {
             List<Order> orderList = new List<Order>();
@@ -48,12 +53,9 @@ namespace SaviantPizza.Web.Extension
             return orderList;
         }
 
-        private static decimal CalculateDiscountedPrice(decimal? discount, decimal? price)
-        {
-            var percentage = (discount * 100) / price;
-            var total = price - percentage;
-            return total.HasValue ? Math.Floor(total.Value) : 0;
-        }
+       
+
+      
 
     }
 }

@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace SaviantPizza.Web.Extension
 {
-    public static class UserModule
+    public static class UserExtension
     {
 
+        /// <summary>
+        /// converts view model to user entity
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns>User</returns>
         public static User UserViewModelToUserEntity(this UserViewModel viewModel)
         {
             User user = new User();

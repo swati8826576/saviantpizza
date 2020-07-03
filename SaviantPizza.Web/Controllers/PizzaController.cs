@@ -16,6 +16,11 @@ namespace SaviantPizza.Web.Controllers
         {
             _pizzaService = pizzaService;
         }
+
+        /// <summary>
+        /// Get pizza list with other details like vendor  , price , discount etc.
+        /// </summary>
+        /// <returns>List<PizzaDetailsViewModel></returns>
         [HttpGet]
         public List<PizzaDetailsViewModel> Get()
         {

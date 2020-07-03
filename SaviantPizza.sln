@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaviantPizza.Test", "SaviantPizza.Test\SaviantPizza.Test.csproj", "{06ECD89D-D405-47A3-AE77-3E2D769C8972}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaviantPizza.UnitTest", "SaviantPizza.Test\SaviantPizza.UnitTest.csproj", "{06ECD89D-D405-47A3-AE77-3E2D769C8972}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaviantPizza.Web", "SaviantPizza.Web\SaviantPizza.Web.csproj", "{71C116ED-FD0C-4544-9DAA-77CC4ECB1AAE}"
 EndProject
@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaviantPizza.Business", "Sa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaviantPizza.Repository", "SaviantPizza.Repository\SaviantPizza.Repository.csproj", "{0A606956-0359-4B1B-8E7E-39388D5D0861}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendorAPIs", "VendorAPIs\VendorAPIs.csproj", "{C51B3532-B588-477C-9300-A72458B9F76C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaviantPizza.IntegrationTest", "SaviantPizza.IntegrationTest\SaviantPizza.IntegrationTest.csproj", "{63FEF382-D88F-4B8F-8717-647B713A49AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{0A606956-0359-4B1B-8E7E-39388D5D0861}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A606956-0359-4B1B-8E7E-39388D5D0861}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A606956-0359-4B1B-8E7E-39388D5D0861}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C51B3532-B588-477C-9300-A72458B9F76C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C51B3532-B588-477C-9300-A72458B9F76C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C51B3532-B588-477C-9300-A72458B9F76C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C51B3532-B588-477C-9300-A72458B9F76C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63FEF382-D88F-4B8F-8717-647B713A49AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63FEF382-D88F-4B8F-8717-647B713A49AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63FEF382-D88F-4B8F-8717-647B713A49AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63FEF382-D88F-4B8F-8717-647B713A49AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
