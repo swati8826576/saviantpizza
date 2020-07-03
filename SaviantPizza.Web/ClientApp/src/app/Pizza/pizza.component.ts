@@ -15,6 +15,7 @@ export class PizzaComponent {
   list: number[]
   myAppUrl: string;
   myApiUrl: string;
+  OtherDiscount1: number;
   constructor(private http: HttpClient ) {
    
   }
@@ -29,7 +30,15 @@ export class PizzaComponent {
           this.data = data;
           
         }
+    );
+
+    this.http.get<any>(this.myAppUrl + 'Discount')
+      .subscribe(
+        data => {
+          this.OtherDiscount1 = data;
+        }
       );
+
    
   }
 
@@ -72,9 +81,13 @@ export class PizzaComponent {
   }
   PlaceOrder() {
     this.myApiUrl = 'Order';
+    var discount = this.OtherDiscount1;
+    this.data.forEach(function (value) {
+      value.OtherDiscount = discount;
+    });
 
     var viewModel = this.data;
-    this.http.post<boolean>(this.myAppUrl + this.myApiUrl, viewModel)
+    this.http.post<boolean>(this.myAppUrl + this.myApiUrl , viewModel)
       .subscribe(data => {
 
         if (data == true)

@@ -117,3 +117,108 @@ UserId:85b7e18f-4de9-449c-a582-ea85ae77acc3 (3be73e76)
 2020-07-03T17:17:35.8138543+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
  (0ebafb57)
 2020-07-03T17:18:20.7689152+05:30 8000017a-0000-fe00-b63f-84710c7967bb [INF] Order made by customer :  Order Id: b7f66fb9-c15f-4aa7-9f4a-08d81f46fbbeUserId: 85b7e18f-4de9-449c-a582-ea85ae77acc3 (5e513932)
+2020-07-03T18:10:38.4737739+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T18:10:38.4887774+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T18:10:38.4889432+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T18:10:45.9214248+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T18:11:48.5570573+05:30 80000112-0003-fe00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: Unable to resolve service for type 'SaviantPizza.Business.IService.IDiscountService' while attempting to activate 'SaviantPizza.Web.Controllers.DiscountController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-07-03T18:12:45.4209209+05:30 80000177-0000-fc00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: Unable to resolve service for type 'SaviantPizza.Business.IService.IDiscountService' while attempting to activate 'SaviantPizza.Web.Controllers.DiscountController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-07-03T18:14:18.4191686+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T18:14:18.4341454+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T18:14:18.4343478+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T18:14:28.3313112+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T18:21:24.4485191+05:30  [ERR] ERROR in app/pizza/pizza.component.ts:86:92 - error TS1005: ',' expected.
+
+86     this.http.post<boolean>(this.myAppUrl + this.myApiUrl +  this.OtherDiscount, viewModel })
+                                                                                              ~
+app/pizza/pizza.component.ts:86:93 - error TS1068: Unexpected token. A constructor, method, accessor, or property was expected.
+
+86     this.http.post<boolean>(this.myAppUrl + this.myApiUrl +  this.OtherDiscount, viewModel })
+                                                                                               ~
+app/pizza/pizza.component.ts:87:7 - error TS1068: Unexpected token. A constructor, method, accessor, or property was expected.
+
+87       .subscribe(data => {
+         ~
+app/pizza/pizza.component.ts:87:23 - error TS1005: ',' expected.
+
+87       .subscribe(data => {
+                         ~~
+app/pizza/pizza.component.ts:89:12 - error TS1005: ':' expected.
+
+89         if (data == true)
+              ~
+app/pizza/pizza.component.ts:94:9 - error TS1128: Declaration or statement expected.
+
+94         else {
+           ~~~~
+app/pizza/pizza.component.ts:98:7 - error TS1128: Declaration or statement expected.
+
+98       });
+         ~
+app/pizza/pizza.component.ts:98:8 - error TS1128: Declaration or statement expected.
+
+98       });
+          ~
+app/pizza/pizza.component.ts:100:3 - error TS1128: Declaration or statement expected.
+ (fa76fd33)
+2020-07-03T18:30:26.9705919+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T18:30:26.9849709+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T18:30:26.9851400+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T18:30:35.4183598+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T18:57:42.0471624+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T18:57:42.0605782+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T18:57:42.0608944+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T18:57:49.3996802+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T19:09:57.2897795+05:30  [ERR]     ERROR in src/app/pizza/pizza.component.ts(86,29): error TS2552: Cannot find name 'discount1'. Did you mean 'discount'?
+    
+ (d8c48255)
+2020-07-03T19:15:16.7250974+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T19:15:16.7400901+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T19:15:16.7402959+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T19:15:23.5466005+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T19:18:00.8873710+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-07-03T19:18:00.9015765+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2020-07-03T19:18:00.9017617+05:30  [INF] Content root path: "D:\Saviant-Pizza\SaviantPizza\SaviantPizza.Web" (b5d60022)
+2020-07-03T19:18:07.8849889+05:30  [ERR] Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+ (0ebafb57)
+2020-07-03T19:20:40.5128114+05:30 8000012d-0003-fe00-b63f-84710c7967bb [INF] Order made by customer :  Order Id: b5c230de-1449-4a97-7a7e-08d81f581298UserId: 85b7e18f-4de9-449c-a582-ea85ae77acc3 (c79e8642)
+2020-07-03T19:21:49.1410342+05:30 8000018e-0001-ff00-b63f-84710c7967bb [INF] Order made by customer :  Order Id: e411b60e-57f8-4d9d-7a7f-08d81f581298UserId: 85b7e18f-4de9-449c-a582-ea85ae77acc3 (ac674700)
+2020-07-03T19:21:53.5216994+05:30 80000133-0003-fe00-b63f-84710c7967bb [INF] Order made by customer :  Order Id: 751af63b-43f5-468b-7a80-08d81f581298UserId: 85b7e18f-4de9-449c-a582-ea85ae77acc3 (92625e4b)
+2020-07-03T19:21:59.3741833+05:30 800000f6-0002-f700-b63f-84710c7967bb [INF] Order made by customer :  Order Id: 7ac69539-c8de-4398-7a81-08d81f581298UserId: 85b7e18f-4de9-449c-a582-ea85ae77acc3 (93c3e518)

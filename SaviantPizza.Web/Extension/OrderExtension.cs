@@ -19,6 +19,7 @@ namespace SaviantPizza.Web.Extension
         /// <returns>list of order entity</returns>
         public static List<Order> ViewModelToEntity( List<PizzaDetailsViewModel> viewModelList ,string userId )
         {
+
             List<Order> orderList = new List<Order>();
 
             foreach (var item in viewModelList)
@@ -34,12 +35,12 @@ namespace SaviantPizza.Web.Extension
                     OrderDetails orderDetail = new OrderDetails();
                     orderDetail.Id = new Guid();
                     orderDetail.Discount = pizzaDetail.DiscountedPrice;
-                    orderDetail.OtherDiscount = 0;
+                    orderDetail.OtherDiscount = item.OtherDiscount;
                     orderDetail.PizzaTypeId = pizzaDetail.PizzaId;
                     orderDetail.Price = pizzaDetail.Price;
-                    orderDetail.TotalAfterDiscount = pizzaDetail.DiscountedPrice;
+                    orderDetail.TotalAfterDiscount = CalculatePriceAfterAllDiscounts(pizzaDetail.DiscountedPrice, item.OtherDiscount);
                     orderDetail.VendorId = item.VendorId;
-                    order.OrdeTotal = order.OrdeTotal + orderDetail.TotalAfterDiscount;
+                    order.OrdeTotal = order.OrdeTotal + orderDetail.TotalAfterDiscount ;
                     order.OrderDetails.Add(orderDetail);
 
                 }
@@ -53,8 +54,13 @@ namespace SaviantPizza.Web.Extension
             return orderList;
         }
 
-       
 
+        private static decimal CalculatePriceAfterAllDiscounts(decimal DiscountedPrice, decimal? OtherDiscount)
+        {
+            var percentage = (OtherDiscount * DiscountedPrice) / 100;
+            var total = DiscountedPrice - percentage;
+            return total.HasValue ? Math.Floor(total.Value) : 0;
+        }
       
 
     }

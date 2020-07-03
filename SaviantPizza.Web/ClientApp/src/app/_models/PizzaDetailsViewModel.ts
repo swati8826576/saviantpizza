@@ -5,6 +5,7 @@ export class PizzaDetailsViewModel {
   VendorName: string;
   IsSelected: boolean;
   isClosed: boolean;
+  OtherDiscount: number;
   pizzaDetails: PizzaDetails[];
 }
 

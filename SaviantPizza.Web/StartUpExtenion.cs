@@ -31,6 +31,10 @@ namespace SaviantPizza.Web
             services.AddScoped<IDisountRepository, DiscountRepository>();
             services.AddScoped<ILoggingHelper, LoggingHelper>();
 
+            services.AddScoped<IDiscountService, DiscountService>();
+            services.AddScoped<IDisountRepository, DiscountRepository>();
+
+
             return services;
 
         }

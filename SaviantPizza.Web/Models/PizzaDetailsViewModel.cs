@@ -12,6 +12,8 @@ namespace SaviantPizza.Web.Models
         public bool IsSelected { get; set; }
         public bool isClosed { get; set; }
          public List<PizzaDetails> pizzaDetails { get; set; }
+        public decimal? OtherDiscount { get; set; }
+
     }
 
 
