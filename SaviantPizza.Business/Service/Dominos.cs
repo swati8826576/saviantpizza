@@ -4,7 +4,7 @@ namespace SaviantPizza.Business.Service
 {
     public class Dominos : IVendor
     {
-        public bool placeOrder()
+        public bool PlaceOrder()
         {
             return true;
         }

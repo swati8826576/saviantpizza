@@ -13,11 +13,14 @@ namespace SaviantPizza.Business.Service
     {
         private readonly IOrderRepository _orderRepository;
         private readonly ILoggingHelper _loggingHelper;
+        private readonly VendorFactoryBase _vendorFactory ;
 
-        public OrderService(IOrderRepository orderRepository, ILoggingHelper loggingHelper)
+
+        public OrderService(IOrderRepository orderRepository, ILoggingHelper loggingHelper, VendorFactoryBase vendorFactory)
         {
             _orderRepository = orderRepository;
             _loggingHelper = loggingHelper;
+            _vendorFactory = vendorFactory;
 
         }
 
@@ -28,8 +31,7 @@ namespace SaviantPizza.Business.Service
         /// <returns>returns true if vendor accepts the order successfully</returns>
         public bool SaveOrder(List<Order> orders)
         {
-            try
-            {
+            
                 //save order to database
                 var order = orders.FirstOrDefault();
                 int vendorType = order.OrderDetails.FirstOrDefault().VendorId;
@@ -37,20 +39,17 @@ namespace SaviantPizza.Business.Service
                 _orderRepository.Save();
 
                 //call external api to place order
-                VendorFactory vendorFactory = new VendorFactory();
-                var vendorToCall = vendorFactory.CreateVendor(vendorType);
-                var result =  vendorToCall.placeOrder();
+               // VendorFactory vendorFactory = new VendorFactory();
+                var vendorToCall = _vendorFactory.CreateVendor(vendorType);
+                var result =  vendorToCall.PlaceOrder();
 
 
                 //call loger
                 _loggingHelper.LogOrderInformation(order);
 
                 return result;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            
+            
         }
     }
 }

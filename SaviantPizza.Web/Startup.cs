@@ -13,6 +13,9 @@ using SaviantPizza.Repository.Entity;
 using Microsoft.Extensions.Logging;
 using SaviantPizza.Web.Controllers;
 using SaviantPizza.Business.Helper;
+using Serilog;
+using System.Diagnostics;
+using Serilog.Events;
 
 namespace SaviantPizza.Web
 {
@@ -91,7 +94,13 @@ namespace SaviantPizza.Web
                 }
             });
 
-             loggerFactory.AddFile("Logs/Orderlogs-{Date}.txt");
+           //  loggerFactory.AddFile("Logs/Infologs-{Date}.txt");
+            Log.Logger = new LoggerConfiguration().MinimumLevel.Debug()
+                .WriteTo.File(path: "Logs/Infologs-{Date}.txt", restrictedToMinimumLevel: LogEventLevel.Information)
+                .WriteTo.File(path: "Logs/Errorlogs-{Date}.txt", restrictedToMinimumLevel: LogEventLevel.Error)
+                .CreateLogger(); 
+
+
         }
     }
 }

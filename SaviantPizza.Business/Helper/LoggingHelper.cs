@@ -15,7 +15,7 @@ namespace SaviantPizza.Business.Helper
         }
         public  void LogOrderInformation ( Order order)
         {
-            _logger.LogInformation("Order made by customer : " + ' '+ "Order Id: " + order.Id + "UserId: " + order.UserId);
+            _logger.LogInformation("Order made by customer : " + ' '+ "Order Id: " + order.Id + "  UserId: " + order.UserId);
 
         }
     }

@@ -1,0 +1,2 @@
+2020-07-06 17:18:32.995 +05:30 [Error] Attempted to divide by zero.
+2020-07-06 17:18:40.544 +05:30 [Error] Attempted to divide by zero.

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SaviantPizza.Business.IService;
+using Serilog;
+using System;
 
 namespace SaviantPizza.Web.Controllers
 {
@@ -13,9 +15,23 @@ namespace SaviantPizza.Web.Controllers
             _discountService = discountService;
         }
         [HttpGet]
-        public decimal? Get()
+        public IActionResult Get()
         {
-          return  _discountService.GetDiscount();
+            try
+            {
+                var discountDetails = _discountService.GetDiscount();
+                if (discountDetails == null)
+                    return NoContent();
+
+                return Ok(discountDetails);
+            }
+
+            catch (Exception e)
+            {
+                Log.Error(e.Message.ToString());
+                return StatusCode(500);
+
+            }
         }
 
     }

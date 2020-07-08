@@ -1,16 +1,14 @@
-﻿using SaviantPizza.Business.IService;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SaviantPizza.Business.Enums;
+using SaviantPizza.Business.IService;
 
-namespace VendorAPIs.Service
+namespace SaviantPizza.Business.Factory
 {
    public abstract class VendorFactoryBase
     {
         protected abstract IVendor MakeVendor(int VendorId);
         public IVendor CreateVendor(int VendorId)
         {
-            return this.MakeVendor( VendorId);
+            return this.MakeVendor( VendorId );
         }
     }
 }

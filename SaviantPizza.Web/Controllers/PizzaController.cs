@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SaviantPizza.Business.IService;
 using SaviantPizza.Web.Extension;
-using SaviantPizza.Web.Models;
-using System.Collections.Generic;
+using Serilog;
+using System;
 
 namespace SaviantPizza.Web.Controllers
 {
@@ -22,9 +22,22 @@ namespace SaviantPizza.Web.Controllers
         /// </summary>
         /// <returns>List<PizzaDetailsViewModel></returns>
         [HttpGet]
-        public List<PizzaDetailsViewModel> Get()
+        public IActionResult Get()
         {
-          return  _pizzaService.GetPizzaList().EntityToViewModel();
+            try {
+
+               var pizzaDetails =   _pizzaService.GetPizzaList().EntityToViewModel();
+                if (pizzaDetails == null)
+                    return NoContent();
+
+                return Ok(pizzaDetails);
+            }
+
+            catch(Exception e ){
+                Log.Error(e.Message.ToString());
+                return StatusCode(500);
+             
+            }
         }
 
       

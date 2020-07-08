@@ -18,7 +18,7 @@ namespace SaviantPizza.Business.Service
 
         public List<VendorType> GetAllVendors()
         {
-          return  _vendorRepository.GetAll().Where(e=>e.IsActive == true).ToList();
+          return  _vendorRepository.Search(e=>e.IsActive == true).ToList();
         }
     }
 }

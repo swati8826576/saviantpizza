@@ -17,11 +17,11 @@ namespace SaviantPizza.IntegrationTest
     {
 
         [TestMethod]
-        public async Task placeorder_returnstrue_test()
+        public async Task PlaceOrder_ReturnsTrue_Test()
         {
-            var OrderMadeByUser = SetUp.GetPizzaDetails();
+            var orderMadeByUser = SetUp.GetPizzaDetails();
 
-            var json = JsonConvert.SerializeObject(OrderMadeByUser);
+            var json = JsonConvert.SerializeObject(orderMadeByUser);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
             var response = await StartUpInitializer.TestHttpClient.PostAsync("/Order", data);

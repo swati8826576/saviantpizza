@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SaviantPizza.Repository.Entity;
+using System.Linq.Expressions;
 
 namespace SaviantPizza.Repository.Repository
 {
@@ -25,6 +26,11 @@ namespace SaviantPizza.Repository.Repository
         public IEnumerable<T> GetAll()
         {
             return table.ToList();
+        }
+
+        public IEnumerable<T> Search(Expression<Func<T, Boolean>> predicate)
+        {
+            return table.Where(predicate);
         }
         public T GetById(object id)
         {

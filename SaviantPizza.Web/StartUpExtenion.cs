@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+
+using SaviantPizza.Business.Factory;
 using SaviantPizza.Business.Helper;
 using SaviantPizza.Business.IService;
 using SaviantPizza.Business.Service;
@@ -33,6 +35,12 @@ namespace SaviantPizza.Web
 
             services.AddScoped<IDiscountService, DiscountService>();
             services.AddScoped<IDisountRepository, DiscountRepository>();
+
+            //services.AddScoped<iven, VendorFactory>();
+
+
+            services.AddScoped<VendorFactoryBase, VendorFactory>();
+
 
 
             return services;

@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SaviantPizza.Business.IService;
 using SaviantPizza.Web.Extension;
+using Serilog;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace SaviantPizza.Web.Controllers
 {
@@ -23,34 +20,25 @@ namespace SaviantPizza.Web.Controllers
         }
 
         [HttpGet]
-        public void Get()
+        public IActionResult Get()
         {
-            _vendorService.GetAllVendors().EntityToViewModel();
+
+            try
+            {
+                var vendorDetails = _vendorService.GetAllVendors().EntityToViewModel();
+                if (vendorDetails == null)
+                    return NoContent();
+
+                return Ok(vendorDetails);
+            }
+
+            catch (Exception e)
+            {
+                Log.Error(e.Message.ToString());
+                return StatusCode(500);
+
+            }
         }
 
-        // GET api/<VendorController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<VendorController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<VendorController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<VendorController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

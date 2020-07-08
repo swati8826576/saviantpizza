@@ -5,7 +5,7 @@ namespace VendorAPIs.Service
 {
     public class PizzaHut : IVendor
     {
-        public bool placeOrder()
+        public bool PlaceOrder()
         {
             return true;
         }

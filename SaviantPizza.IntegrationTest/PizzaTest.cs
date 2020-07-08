@@ -22,9 +22,9 @@ namespace SaviantPizza.IntegrationTest
             response.EnsureSuccessStatusCode();
 
             var result = await response.Content.ReadAsStringAsync();
-            var PizzaDetail = JsonConvert.DeserializeObject<List<PizzaDetailsView>>(result);
+            var pizzaDetail = JsonConvert.DeserializeObject<List<PizzaDetailsView>>(result);
 
-            Assert.IsNotNull(PizzaDetail);
+            Assert.IsNotNull(pizzaDetail);
         }
     }
 }

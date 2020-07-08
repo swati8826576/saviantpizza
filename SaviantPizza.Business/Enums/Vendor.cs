@@ -4,10 +4,10 @@ using System.Text;
 
 namespace SaviantPizza.Business.Enums
 {
-    enum Vendor
+   public enum Vendor
     {
-        Dominos = 1,
-        PizzaHut = 2
+        Dominos=1 ,
+        PizzaHut=2
 
     }
 }

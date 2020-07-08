@@ -2,7 +2,8 @@
 using SaviantPizza.Business.IService;
 using SaviantPizza.Web.Extension;
 using SaviantPizza.Web.Models;
-
+using Serilog;
+using System;
 
 namespace SaviantPizza.Web.Controllers
 {
@@ -26,11 +27,24 @@ namespace SaviantPizza.Web.Controllers
         /// <returns>returns true if user is valid</returns>
 
         [HttpPost]
-        public bool Login([FromBody] UserViewModel user)
+        public IActionResult Login([FromBody] UserViewModel user)
         {
-           return  _loginService.Login(user.UserViewModelToUserEntity());
-        }
+            try
+            {
+                var a = ModelState.IsValid;
 
+                var userDetails = _loginService.Login(user.UserViewModelToUserEntity());
+                return Ok(userDetails);
+            }
+
+            catch (Exception e)
+            {
+                Log.Error(e.Message.ToString());
+                return StatusCode(500);
+
+            }
+
+        }
       
     }
 }
