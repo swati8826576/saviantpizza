@@ -29,7 +29,7 @@ namespace SaviantPizza.Business.Service
         /// </summary>
         /// <param name="orders"></param>
         /// <returns>returns true if vendor accepts the order successfully</returns>
-        public bool SaveOrder(List<Order> orders)
+        public Order SaveOrder(List<Order> orders)
         {
             
                 //save order to database
@@ -39,15 +39,14 @@ namespace SaviantPizza.Business.Service
                 _orderRepository.Save();
 
                 //call external api to place order
-               // VendorFactory vendorFactory = new VendorFactory();
                 var vendorToCall = _vendorFactory.CreateVendor(vendorType);
-                var result =  vendorToCall.PlaceOrder();
+                  vendorToCall.PlaceOrder();
 
 
                 //call loger
                 _loggingHelper.LogOrderInformation(order);
 
-                return result;
+                return order;
             
             
         }

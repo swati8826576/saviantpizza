@@ -5,6 +5,6 @@ namespace SaviantPizza.Business.IService
 {
     public interface IOrderService
     {
-        bool SaveOrder(List<Order> orders);
+        Order SaveOrder(List<Order> orders);
     }
 }
