@@ -31,7 +31,6 @@ namespace SaviantPizza.Web.Controllers
         {
             try
             {
-                var a = ModelState.IsValid;
 
                 var userDetails = _loginService.Login(user.UserViewModelToUserEntity());
                 return Ok(userDetails);
